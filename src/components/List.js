@@ -6,7 +6,7 @@ const List = ({ list, todos }) => {
     return (
         <div className="card card-body border-primary mb-3 mt-2">
             <div>
-                <h1>{list.name}</h1>
+                <h1>{list.id}-{list.name}</h1>
                 <button className="btn btn-danger">Eliminar Lista</button>
                 <CreateToDo
                     {...list}

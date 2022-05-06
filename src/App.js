@@ -4,9 +4,9 @@ import ListadoDeListas from "./components/ListadoDeListas";
 
 const App = () => (
     <>
-        <h1>To-Do apllication</h1>
-        <CreateList />
-        <ListadoDeListas />
+            <h1>To-Do apllication</h1>
+            <CreateList />
+            <ListadoDeListas />
     </>
 );
 
