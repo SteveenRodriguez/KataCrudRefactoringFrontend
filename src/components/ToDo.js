@@ -16,8 +16,12 @@ const ToDo = (todo) => {
             <td>{todo.idTodo}</td>
             <td>{todo.nameToDo}</td>
             <td><input type="checkbox" defaultChecked={todo.completed} /></td>
-            <td><button>Eliminar</button></td>
-            <td><button onClick={() => { submit(); }}>Editar</button>
+            <td><button className="btn btn-danger" >Eliminar</button></td>
+            <td><button
+                onClick={() => { submit(); }}
+                className="btn btn-primary"
+            >Editar
+            </button>
                 {
                     editandoTodo ? <EditToDo /> : <></>
                 }
