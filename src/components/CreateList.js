@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //creación función CreateList
 const CreateList = () => {
 
-    //se crea la función lista, con su estado inicial en cero
+    //se crea la lista, con su estado inicial en cero
     const [lista, setLista] = useState("");
 
     const submit = (e) => {
