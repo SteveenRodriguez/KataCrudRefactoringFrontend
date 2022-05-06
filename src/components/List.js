@@ -1,6 +1,6 @@
 import React from 'react';
 import CreateToDo from './CreateToDo';
-import ToDo from './Todo';
+import ToDo from './ToDo';
 
 const List = ({ list, todos }) => {
     return (
