@@ -22,10 +22,9 @@ const ListadoDeListas = () => {
     return (
         <div>
             <h1>Listas</h1>
-            {
-                listWithTodos.map((info) => (
-                    <List key={info.list.id} list={info.list} todos={info.todos} />
-                ))}
+            {listWithTodos.map((info) => (
+                <List key={info.list.id} list={info.list} todos={info.todos} />
+            ))}
         </div>
     );
 
