@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import EditToDo from './EditToDo';
 
 const decorationDone = {
-    textDecoration: 'line-throug'
+    textDecoration: 'line-through'
 };
 
 const ToDo = (todo) => {
@@ -11,17 +11,14 @@ const ToDo = (todo) => {
     const submit = (e) => {
         setEditando(true);
     };
+
     return (
         <tr key={todo.idToDo} style={todo.completed ? decorationDone : {}}>
-            <td>{todo.idTodo}</td>
+            <td>{todo.idToDo}</td>
             <td>{todo.nameToDo}</td>
-            <td><input type="checkbox" defaultChecked={todo.completed} /></td>
-            <td><button className="btn btn-danger" >Eliminar</button></td>
-            <td><button
-                onClick={() => { submit(); }}
-                className="btn btn-primary"
-            >Editar
-            </button>
+            <td><input type="checkbox" defaultChecked={todo.completed}></input></td>
+            <td><button >Eliminar</button></td>
+            <td><button onClick={() => { submit(); }}>Editar</button>
                 {
                     editandoTodo ? <EditToDo /> : <></>
                 }
