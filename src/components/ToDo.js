@@ -6,15 +6,13 @@ const decorationDone = {
 };
 
 const ToDo = (todo) => {
-
-
     return (
-        
+
         <tr key={todo.idToDo} style={todo.completed ? decorationDone : {}}>
             <td >{todo.idToDo}</td>
             <td >{todo.nameToDo}</td>
             <td><input type="checkbox" defaultChecked={todo.completed}></input></td>
-            
+
             <EditToDo
                 todos={todo}
             />

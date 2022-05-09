@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const EditToDo = ({ todos }) => {
-    console.log(todos);
     const [edit, setEdit] = useState(false);
     const [newNameTodo, setNewNameTodo] = useState("");
     const [eliminar, setEliminar] = useState(false);
@@ -9,7 +8,7 @@ const EditToDo = ({ todos }) => {
     const deleteTodo = (id, eliminar) => {
         const headers = { "Content-Type": "application/json" };
         let requestParameters = {
-            method: "DELETE",
+            method: 'DELETE',
             headers,
             mode: 'no-cors',
         };
@@ -19,18 +18,17 @@ const EditToDo = ({ todos }) => {
             });
     };
 
-    const editTodos = (newNameTodo) => {
-        console.log(todos);
+    const editTodos = (todo, newNameTodo) => {
         const headers = { "Content-Type": "application/json" };
         let requestParameters = {
             method: "PUT",
             headers,
-            mode: 'cors',
+            mode: 'no-cors',
             body: JSON.stringify({
                 name: newNameTodo,
             })
         };
-        fetch(`${process.env.REACT_APP_HOST_API}/api/todo/${todos}`, requestParameters)
+        fetch(`${process.env.REACT_APP_HOST_API}/api/todo/${todo}`, requestParameters)
             .then(() => {
                 console.log("Todo Editada");
             });
@@ -44,11 +42,11 @@ const EditToDo = ({ todos }) => {
                         <input type="text" placeholder="Change ToDo Name" onChange={(e) => { setNewNameTodo(e.target.value); }}></input>
 
                         <button className='btn btn-success' onClick={() => {
-                            editTodos(newNameTodo);
+                            editTodos(todos, newNameTodo);
                         }}>Edit List</button>
 
                         <button className="btn btn-danger" onClick={(e) => {
-                            deleteTodo(todos.id, eliminar);
+                            deleteTodo(todos.idToDo, eliminar);
                         }
                         }>Delete ToDo</button>
 
