@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
+
 //creación función CreateList
 const CreateList = () => {
-    
+
     //se crea la lista, con su estado inicial en cero
     const [lista, setLista] = useState("");
 
@@ -19,19 +20,21 @@ const CreateList = () => {
         //llamamos a nuesta api, variable de entorno y le pasamos los parámetros
         fetch(`${process.env.REACT_APP_HOST_API}/api/list`, requestParameters)
             .then(() => { console.log("Lista Creada"); });
+
     };
 
     return (
-        <form onSubmit={submit}>
-            <h3>Crear nueva lista de tareas:</h3>
+        <form onSubmit={submit} className='container'>
+            <h3>Create New List</h3>
             <input
                 type="text"
                 required
                 value={lista}
-                placeholder="Nombre Lista"
-                onChange={(e) => setLista(e.target.value)}
+                placeholder="Name List"
+                onChange={(e) => { setLista(e.target.value); }}
+                className='container px-4'
             />
-            <input type="submit" className="btn btn-primary" value="Guardar" />
+            <input type="submit" className="btn btn-primary" value="Create" />
         </form>
     );
 

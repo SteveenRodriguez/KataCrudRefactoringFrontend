@@ -31,11 +31,11 @@ const CreateToDo = (lista) => {
                     type="text"
                     required
                     value={nameTodo}
-                    placeholder="Actividad a realizar"
+                    placeholder="To Do..."
                     onChange={(e) => setToDo(e.target.value)
                     }
                 />
-                <input type="submit" value="añadir" />
+                <input type="submit" value="añadir" className='btn btn-success' />
             </form>
         </>
     );
